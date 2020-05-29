@@ -1,6 +1,6 @@
 # news.sedders123.me
 
-Hello! This repo generates my personal RSS feed. It's hosted at [news.sedders123.me](https://news.sedders123.me/). This project is a port of [news.jamesroutley.io](http://news.jamesroutley.io) to C# .NET Core.
+Hello! This repo generates my personal RSS feed. It's hosted at [news.sedders123.me](https://news.sedders123.me/). This project is a port of [https://news.routley.io](https://news.routley.io) to C# .NET Core.
 
 ## How does it work?
 
@@ -25,4 +25,4 @@ If you think there's an awesome blog I should be checking out open an issue or P
 
 ## Acknowledgements
 
- - [James Routley](https://github.com/jamesroutley) - For his work on [news.jamesroutley.io](http://news.jamesroutley.io) which inspired this project
+ - [James Routley](https://github.com/jamesroutley) - For his work on [https://news.routley.io](https://news.routley.io) which inspired this project
