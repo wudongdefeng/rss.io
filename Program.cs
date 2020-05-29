@@ -1,23 +1,29 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.ServiceModel.Syndication;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Xml;
+using CodeHollow.FeedReader;
 using Scriban;
 
 namespace news.sedders123.me
 {
     class Program
     {
+        private static readonly CancellationTokenSource _cts = new CancellationTokenSource();
+
         static async Task Main(string[] args)
         {
-            await new NewsCollator().RunAsync();
+            Console.CancelKeyPress += (sender, eventArgs) =>
+            {
+                _cts.Cancel();
+                eventArgs.Cancel = true;
+            };
+
+            await new NewsCollator().RunAsync(_cts.Token);
         }
     }
-
 
     public class NewsCollator
     {
@@ -32,7 +38,7 @@ namespace news.sedders123.me
             "http://feeds.feedburner.com/CodeCodeAndMoreCode",
             "http://feeds.hanselman.com/scotthanselman",
             "https://devblogs.microsoft.com/dotnet/feed/",
-            // "https://code.visualstudio.com/feed.xml",
+            "https://code.visualstudio.com/feed.xml",
             "https://devblogs.microsoft.com/python/feed/",
             "https://devblogs.microsoft.com/commandline/feed/",
             "https://devblogs.microsoft.com/aspnet/feed/",
@@ -47,27 +53,21 @@ namespace news.sedders123.me
 
         private TimeSpan RelevantDuration => TimeSpan.FromDays(-60);
 
-        public async Task RunAsync()
+        public async Task RunAsync(CancellationToken cancel)
         {
-            var feedItems = new ConcurrentBag<(string feedUrl, SyndicationItem item)>();
-
-            Parallel.ForEach(_feeds, feed =>
-            {
-                foreach (var item in GetFeedItems(feed))
-                {
-                    feedItems.Add((feed, item));
-                }
-            });
+            var tasks = _feeds.Select(f => GetFeedItemsAsync(f, cancel));
+            var feeds = await Task.WhenAll(tasks);
+            var feedItems = feeds.SelectMany(f => f);
 
             var template = Template.Parse(Resources.HtmlTemplate);
             var result = template.Render(new
             {
                 Timestamp = DateTime.UtcNow.ToString("R"),
-                Posts = feedItems.OrderByDescending(i => i.item.PublishDate).Select(i => new
+                Posts = feedItems.OrderByDescending(i => i.PublishingDate).Select(i => new
                 {
-                    Title = i.item.Title.Text,
-                    Link = i.item.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri,
-                    Host = _hostOverrides.ContainsKey(i.feedUrl) ? _hostOverrides[i.feedUrl] : i.item.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri.Host
+                    Title = i.Title,
+                    Link = i.Link,
+                    Host = _hostOverrides.ContainsKey(i.FeedUrl) ? _hostOverrides[i.FeedUrl] : new Uri(i.Link).Host
                 })
             });
             using (var outputFile = new StreamWriter(Path.Combine("docs", "index.html")))
@@ -76,11 +76,17 @@ namespace news.sedders123.me
             }
         }
 
-        private SyndicationItem[] GetFeedItems(string url)
+        public class FeedItemWithHost : FeedItem
         {
-            using var reader = XmlReader.Create(url);
-            var feed = SyndicationFeed.Load(reader);
-            return feed.Items.Where(i => i.PublishDate >= DateTime.UtcNow.Add(RelevantDuration)).ToArray();
+            public string FeedUrl { get; set; }
+        }
+        private async Task<FeedItemWithHost[]> GetFeedItemsAsync(string url, CancellationToken cancel)
+        {
+            var feed = await FeedReader.ReadAsync(url, cancel);
+            return feed.Items
+                .Where(i => i.PublishingDate >= DateTime.UtcNow.Add(RelevantDuration))
+                .Select(i => new FeedItemWithHost { Title = i.Title, Link = i.Link, PublishingDate = i.PublishingDate, FeedUrl = url })
+                .ToArray();
         }
     }
 
