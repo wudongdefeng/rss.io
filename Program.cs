@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -40,29 +41,33 @@ namespace news.sedders123.me
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
-            {"feeds.hanselman.com", "hanselman.com"},
-            {"feedproxy.google.com", "blog.marcgravell.com"} // Need to rethink this if another google blog is added
+            {"http://feeds.hanselman.com/scotthanselman", "hanselman.com"},
+            {"http://feeds.feedburner.com/CodeCodeAndMoreCode", "blog.marcgravell.com"}
         };
 
         private TimeSpan RelevantDuration => TimeSpan.FromDays(-60);
 
         public async Task RunAsync()
         {
-            var feedItems = new List<SyndicationItem>();
-            foreach (var feed in _feeds)
+            var feedItems = new ConcurrentBag<(string feedUrl, SyndicationItem item)>();
+
+            Parallel.ForEach(_feeds, feed =>
             {
-                feedItems.AddRange(GetFeedItems(feed));
-            }
+                foreach (var item in GetFeedItems(feed))
+                {
+                    feedItems.Add((feed, item));
+                }
+            });
 
             var template = Template.Parse(Resources.HtmlTemplate);
             var result = template.Render(new
             {
                 Timestamp = DateTime.UtcNow.ToString("R"),
-                Posts = feedItems.OrderByDescending(i => i.PublishDate).Select(i => new
+                Posts = feedItems.OrderByDescending(i => i.item.PublishDate).Select(i => new
                 {
-                    Title = i.Title.Text,
-                    Link = i.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri,
-                    Host = _hostOverrides.ContainsKey(i.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri.Host) ? _hostOverrides[i.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri.Host] : i.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri.Host
+                    Title = i.item.Title.Text,
+                    Link = i.item.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri,
+                    Host = _hostOverrides.ContainsKey(i.feedUrl) ? _hostOverrides[i.feedUrl] : i.item.Links.FirstOrDefault(l => l.RelationshipType == "alternate").Uri.Host
                 })
             });
             using (var outputFile = new StreamWriter(Path.Combine("docs", "index.html")))
