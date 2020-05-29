@@ -42,13 +42,43 @@ namespace news.sedders123.me
             "https://devblogs.microsoft.com/python/feed/",
             "https://devblogs.microsoft.com/commandline/feed/",
             "https://devblogs.microsoft.com/aspnet/feed/",
-            "https://routley.io/posts/index.xml"
+            "https://routley.io/posts/index.xml",
+            "https://www.encode.io/feeds/articles.rss",
+            "https://engineering.fb.com/feed/",
+            "https://medium.com/feed/netflix-techblog",
+            "https://trickey.io/posts/index.xml",
+            "https://feeds.feedburner.com/PythonInsider",
+            "https://www.raspberrypi.org/feed/",
+            "https://stackshare.io/featured-posts.atom",
+            "https://technology.blog.gov.uk/feed/",
+            "https://www.scorpia.co.uk/feed/",
+            "https://alexwlchan.net/atom.xml",
+            "https://blog.cloudflare.com/rss/",
+            "https://blog.digitalocean.com/rss/",
+            "https://blog.sentry.io/feed.xml",
+            "https://github.blog/feed/",
+            "https://thread.engineering/rss.xml",
+            "https://doist.com/blog/category/todoist/feed/",
+            "https://snyk.io/blog/feed/",
+            "https://letsencrypt.org/feed.xml",
+            "https://blog.mozilla.org/security/feed/",
+            "https://www.blogger.com/feeds/4838136820032157985/posts/default",
+            "https://scotthelme.co.uk/rss/",
+            "https://www.namecheap.com/blog/category/security-privacy/feed/",
+            "https://tails.boum.org/news/index.en.rss",
+            "http://feeds.feedburner.com/TroyHunt",
+            "https://blog.torproject.org/rss.xml",
+            "http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches"
 
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
             {"http://feeds.hanselman.com/scotthanselman", "hanselman.com"},
-            {"http://feeds.feedburner.com/CodeCodeAndMoreCode", "blog.marcgravell.com"}
+            {"http://feeds.feedburner.com/CodeCodeAndMoreCode", "blog.marcgravell.com"},
+            {"https://feeds.feedburner.com/PythonInsider", "pythoninsider.blogspot.com"},
+            {"https://www.blogger.com/feeds/4838136820032157985/posts/default", "googleprojectzero.blogspot.com"},
+            {"http://feeds.feedburner.com/TroyHunt", "troyhunt.com"},
+            {"http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches", "haveibeenpwned.com"},
         };
 
         private TimeSpan RelevantDuration => TimeSpan.FromDays(-60);
