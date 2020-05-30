@@ -56,7 +56,7 @@ namespace news.sedders123.me
             "https://blog.cloudflare.com/rss/",
             "https://blog.digitalocean.com/rss/",
             "https://blog.sentry.io/feed.xml",
-            "https://github.blog/feed/",
+            " https://github.blog/all.atom",
             "https://thread.engineering/rss.xml",
             "https://doist.com/blog/category/todoist/feed/",
             "https://snyk.io/blog/feed/",
@@ -68,8 +68,8 @@ namespace news.sedders123.me
             "https://tails.boum.org/news/index.en.rss",
             "http://feeds.feedburner.com/TroyHunt",
             "https://blog.torproject.org/rss.xml",
-            "http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches"
-
+            "http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches",
+            "https://blog.github.com/changelog/feed"
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
