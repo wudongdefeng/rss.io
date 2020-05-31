@@ -69,7 +69,8 @@ namespace news.sedders123.me
             "http://feeds.feedburner.com/TroyHunt",
             "https://blog.torproject.org/rss.xml",
             "http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches",
-            "https://blog.github.com/changelog/feed"
+            "https://blog.github.com/changelog/feed",
+            "https://increment.com/feed.xml",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
