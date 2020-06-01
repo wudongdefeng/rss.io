@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CodeHollow.FeedReader;
 using Scriban;
 
-namespace news.sedders123.me
+namespace news.jss.sh
 {
     class Program
     {
@@ -118,8 +118,7 @@ namespace news.sedders123.me
             "https://codeofmatt.com/rss/",
             "https://seldo.com/rss.xml",
             "https://sophiebits.com/atom.xml",
-            "https://tisiphone.net/feed/"
-
+            "https://tisiphone.net/feed/",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
@@ -205,7 +204,7 @@ namespace news.sedders123.me
 			{{ end }}
 		</ol>
 		<footer>
-			<p><a href=""https://github.com/sedders123/news.sedders123.me"">Source</a></p>
+			<p><a href=""https://github.com/sedders123/news.jss.sh"">Source</a></p>
 			<p>Last updated on {{ timestamp }}</p>
 		</footer>
 	</body>
