@@ -166,11 +166,20 @@ namespace news.jss.sh
         }
         private async Task<FeedItemWithHost[]> GetFeedItemsAsync(string url, CancellationToken cancel)
         {
-            var feed = await FeedReader.ReadAsync(url, cancel);
-            return feed.Items
-                .Where(i => i.PublishingDate >= DateTime.UtcNow.Add(RelevantDuration))
-                .Select(i => new FeedItemWithHost { Title = i.Title, Link = i.Link, PublishingDate = i.PublishingDate, FeedUrl = url })
-                .ToArray();
+            try
+            {
+                var feed = await FeedReader.ReadAsync(url, cancel);
+                return feed.Items
+                    .Where(i => i.PublishingDate >= DateTime.UtcNow.Add(RelevantDuration))
+                    .Select(i => new FeedItemWithHost { Title = i.Title, Link = i.Link, PublishingDate = i.PublishingDate, FeedUrl = url })
+                    .ToArray();
+            }
+            catch
+            {
+                Console.WriteLine($"Failed to fetch feed {url}");
+                return Array.Empty<FeedItemWithHost>();
+            }
+
         }
     }
 
