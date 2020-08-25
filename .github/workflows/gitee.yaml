@@ -22,19 +22,13 @@ jobs:
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
-
-   
-
-    
-
-     - name: Clone source code 克隆源码
+      
+    - name: Clone source code 克隆源码
       run: |
         git clone https://github.com/wudongdefeng/rss.io.git rss.io  
          
         git clone https://gitee.com/wudongdefeng/rss.io.git ~/gitee
-   
-    
-
+     
     - name: copy some list files 复制文件
       run: |
         echo "https://wudongdefeng:${{ secrets.mima }}@gitee.com">~/.git-credentials
