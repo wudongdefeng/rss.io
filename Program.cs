@@ -29,7 +29,7 @@ namespace news.jss.sh
     {
         private string[] _feeds = new[]
         {
-            "https://www.52pojie.cn/forum.php?mod=rss&fid=2",
+                "https://link.rss.wiki/newrank/wechat/zhihuribao",
 		"https://fuliba2020.net/feed",
 		"https://hao.su/feed",
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
