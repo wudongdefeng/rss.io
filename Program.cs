@@ -105,8 +105,7 @@ namespace rss.io
         <!DOCTYPE html>
 <html>
 	<head>
-	       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	       <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
 		<title>舞动的风 | Feed</title>
 		<style>
 			@import url(""https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"");
