@@ -36,7 +36,7 @@ jobs:
   
     - name: Clone source code 克隆源码
       run: |
-        git clone https://github.com/wudongdefeng/wudongdefeng.github.io.git wudongdefeng.github.io    
+        git clone https://github.com/wudongdefeng/rss.io.git wudongdefeng.github.io    
          
         git clone https://gitee.com/wudongdefeng/rss.git ~/gitee
         
