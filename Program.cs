@@ -35,6 +35,8 @@ namespace rss.io
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
 		"https://rsshub.ioiox.com/zaker/source/660",
 		"https://rsshub.ioiox.com/zhihu/daily",
+		"https://link.rss.wiki/newrank/wechat/zhihuribao",
+	        "https://link.rss.wiki/wechat/ershicimi/Vj5aZwjn",	
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
@@ -103,8 +105,7 @@ namespace rss.io
         <!DOCTYPE html>
 <html>
 	<head>
-	        
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>舞动的风 | Feed</title>
 		<style>
