@@ -108,7 +108,7 @@ namespace rss.io
 <html>
 	<head>
 	       <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-		<title>舞动的风 | Feed</title>
+		<title>wudongdefeng | Feed</title>
 		<style>
 			@import url(""https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"");
 			body {
