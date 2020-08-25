@@ -27,21 +27,19 @@ jobs:
 
     
 
-    - name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Build website (automatic)
-        file_pattern: docs/index.html
-  
-    - name: Clone source code 克隆源码
+     - name: Clone source code 克隆源码
       run: |
-         git clone https://github.com/wudongdefeng/rss.io.git rss.io
-         git clone https://gitee.com/wudongdefeng/rss.io.git ~/gitee
-        
+        git clone https://github.com/wudongdefeng/rss.io.git rss.io  
+         
+        git clone https://gitee.com/wudongdefeng/rss.io.git ~/gitee
+   
+    
+
     - name: copy some list files 复制文件
       run: |
         echo "https://wudongdefeng:${{ secrets.mima }}@gitee.com">~/.git-credentials
-        cp ./docs/index.html ~/gitee/docs/index.html
+        cp ./rss.io/docs/index.html ~/gitee/docs/index.html
+
     - name: Commit files 提交文件
       run: |
         cd ~/gitee
@@ -50,4 +48,4 @@ jobs:
         git config --local user.name "wudongdefeng"
         git add .
         git commit -m "空投已送达" -a
-        git push -u origin master   
+        git push -u origin master
