@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CodeHollow.FeedReader;
 using Scriban;
 
-namespace news.jss.sh
+namespace rss.io
 {
     class Program
     {
@@ -104,7 +104,7 @@ namespace news.jss.sh
 <html>
 	<head>
 		<meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-		<title>James Seden Smith | Feed</title>
+		<title>舞动的风 | Feed</title>
 		<style>
 			@import url(""https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"");
 			body {
