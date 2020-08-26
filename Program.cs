@@ -39,6 +39,9 @@ namespace rss.io
 	        "https://link.rss.wiki/wechat/ershicimi/Vj5aZwjn",
          	"https://www.zhihu.com/rss",
 		"https://rsshub.ioiox.com/netease/news/special/1",
+		"https://rsshub.ioiox.com/banyuetan/jicengzhili",
+		"https://rsshub.ioiox.com/zaobao/realtime/china",
+		"https://rsshub.ioiox.com/reuters/channel/cn/generalnews",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
