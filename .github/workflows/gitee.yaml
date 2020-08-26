@@ -1,45 +1,46 @@
-name: Build gitee
+#name: Build gitee
 
-on:
-  push:
-    branches: [ master ]
-  schedule:
-    # Run every hour
-    - cron: '0 * * * *'
+#on:
+#  push:
+#    branches: [ master ]
+#  schedule:
+#    # Run every hour
+ #   - cron: '0 * * * *'
 
-jobs:
+#jobs:
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#    steps:
 
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ^1.13
-      id: go
+#    - name: Set up Go 1.x
+#      uses: actions/setup-go@v2
+#      with:
+ #       go-version: ^1.13
+#      id: go
 
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
+ #   - name: Check out code into the Go module directory
+#      uses: actions/checkout@v2
       
-    - name: Clone source code 克隆源码
-      run: |
-        git clone https://github.com/wudongdefeng/rss.io.git rss.io  
+#    - name: Clone source code 克隆源码
+#      run: |
+#        git clone https://github.com/wudongdefeng/rss.io.git rss.io  
          
-        git clone https://gitee.com/wudongdefeng/rss.io.git ~/gitee
-     
-    - name: copy some list files 复制文件
-      run: |
-        echo "https://wudongdefeng:${{ secrets.mima }}@gitee.com">~/.git-credentials
-        cp ./rss.io/docs/index.html ~/gitee/docs/index.html
+#        git clone https://gitee.com/wudongdefeng/rss.io.git ~/gitee
+#     
+#    - name: copy some list files 复制文件
+#      run: |
+#        echo "https://wudongdefeng:${{ secrets.mima }}@gitee.com">~/.git-credentials
+ #       cp ./rss.io/docs/index.html ~/gitee/docs/index.html
 
-    - name: Commit files 提交文件
-      run: |
-        cd ~/gitee
-        git config --global credential.helper store
-        git config --local user.email "${{ secrets.youxiang }}"
-        git config --local user.name "wudongdefeng"
-        git add .
-        git commit -m "空投已送达" -a
-        git push -u origin master
+#    - name: Commit files 提交文件
+ #     run: |
+#        cd ~/gitee
+#        git config --global credential.helper store
+#        git config --local user.email "${{ secrets.youxiang }}"
+ #       git config --local user.name "wudongdefeng"
+#        git add .
+#        git commit -m "空投已送达" -a
+#        git push -u origin master
+#
