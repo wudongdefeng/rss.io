@@ -29,19 +29,16 @@ namespace rss.io
     {
         private string[] _feeds = new[]
         {
-                "https://rsshub.app/newrank/wechat/zhihuribao",
-		"https://fuliba2020.net/feed",
+                "https://fuliba2020.net/feed",
 		"https://hao.su/feed",
-		"https://rsshub.app/zhihuzhuanlan/c_1085975047386050560",
+		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
 		"https://rsshub.app/zaker/source/660",
 		"https://rsshub.app/zhihu/daily",
 		"https://rsshub.app/zhihu/daily",
-	        "https://rsshub.app/wechat/ershicimi/Vj5aZwjn",
-         	"https://www.zhihu.com/rss",
+	        "https://www.zhihu.com/rss",
 		"https://rsshub.app/netease/news/special/1",
 		"https://rsshub.app/banyuetan/jicengzhili",
 		"https://rsshub.app/zaobao/realtime/china",
-		"https://rsshub.app/reuters/channel/cn/generalnews",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
