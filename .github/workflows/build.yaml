@@ -24,7 +24,7 @@ jobs:
       run: dotnet run
 
     - name: Commit changes
-      uses: wudongdefeng/git-auto-commit-action@v4
+      uses: wudongdefeng/git-auto-commit-action@v4.0.0
       with:
         commit_message: Build website (automatic)
         file_pattern: docs/index.html
