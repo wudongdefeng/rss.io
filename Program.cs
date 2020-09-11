@@ -29,8 +29,7 @@ namespace rss.io
     {
         private string[] _feeds = new[]
         {
-                "https://link.rss.wiki/newrank/wechat/zhihuribao",
-		"https://fuliba2020.net/feed",
+                "https://fuliba2020.net/feed",
 		"https://hao.su/feed",
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
 		"https://rsshub.ioiox.com/zaker/source/660",
@@ -41,7 +40,6 @@ namespace rss.io
 		"https://rsshub.ioiox.com/netease/news/special/1",
 		"https://rsshub.ioiox.com/banyuetan/jicengzhili",
 		"https://rsshub.ioiox.com/zaobao/realtime/china",
-		"https://rsshub.ioiox.com/reuters/channel/cn/generalnews",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
