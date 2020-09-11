@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CodeHollow.FeedReader;
 using Scriban;
 
-namespace rss.io
+namespace news.jss.sh
 {
     class Program
     {
@@ -29,7 +29,7 @@ namespace rss.io
     {
         private string[] _feeds = new[]
         {
-                "https://fuliba2020.net/feed",
+            "https://fuliba2020.net/feed",
 		"https://hao.su/feed",
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
 		"https://rsshub.ioiox.com/zaker/source/660",
@@ -108,8 +108,8 @@ namespace rss.io
         <!DOCTYPE html>
 <html>
 	<head>
-	       <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
-		<title>wudongdefeng | Feed</title>
+		<meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+		<title>James Seden Smith | Feed</title>
 		<style>
 			@import url(""https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"");
 			body {
