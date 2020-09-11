@@ -39,7 +39,7 @@ namespace rss.io
          	"https://www.zhihu.com/rss",
 		"https://rsshub.ioiox.com/netease/news/special/1",
 		"https://rsshub.ioiox.com/banyuetan/jicengzhili",
-		"https://rsshub.ioiox.com/zaobao/realtime/china",
+		"https://rsshub.ioiox.com/zaobao/realtime/china"
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
