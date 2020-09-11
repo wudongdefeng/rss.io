@@ -32,12 +32,12 @@ namespace rss.io
                 "https://fuliba2020.net/feed",
 		"https://hao.su/feed",
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
-		"https://link.rss.wiki//zaker/source/660",
-		"https://link.rss.wiki//zhihu/daily",
+		"https://link.rss.wiki/zaker/source/660",
+		"https://link.rss.wiki/zhihu/daily",
 	        "https://www.zhihu.com/rss",
-		"https://link.rss.wiki//netease/news/special/1",
-		"https://link.rss.wiki//banyuetan/jicengzhili",
-		"https://link.rss.wiki//zaobao/realtime/china",
+		"https://link.rss.wiki/netease/news/special/1",
+		"https://link.rss.wiki/banyuetan/jicengzhili",
+		"https://link.rss.wiki/zaobao/realtime/china",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
