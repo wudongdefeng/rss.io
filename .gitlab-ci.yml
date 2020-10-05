@@ -17,7 +17,7 @@ test:
     - bundle exec jekyll build -d test
   artifacts:
     paths:
-      - test/docs
+      - test
   except:
     - master
 
