@@ -22,21 +22,16 @@ jobs:
      
     - name: Clone source code 克隆源码
       run: |
-        git clone https://github.com/wudongdefeng/rss.io.git rss.io   
+        git clone https://github.com/wudongdefeng/rss.io.git rss.io    
          
-        git clone https://gitlab.com/wudongdefeng/rss.io.git ~/gitlab
+        git clone https://gitlab.com/wudongdefeng/rss-io.git ~/gitlab
    
-    - name: Run diy.sh 开始定制
-      run: |
-        chmod +x diy.sh
-        cp -f diy.sh ./anti-AD/diy.sh
-        sudo ./anti-AD/diy.sh
+    
 
     - name: copy some list files 复制文件
       run: |
         echo "https://wudongdefeng:${{ secrets.gitlab }}@gitlab.com">~/.git-credentials
-        cp ./rss.io/docs/index.html ~/gitlab/docs/index.html
-
+        cp ./rss.io/docs/index.html ~/gitlab//index.html
     - name: Commit files 提交文件
       run: |
         cd ~/gitlab
