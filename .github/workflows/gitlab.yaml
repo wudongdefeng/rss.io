@@ -24,7 +24,7 @@ jobs:
       run: |
         git clone https://github.com/wudongdefeng/rss.io.git rss.io    
          
-        git clone https://gitlab.com/wudongdefeng/rss-io.git ~/gitlab
+        git clone https://gitlab.com/wudongdefeng/rss.io.git ~/gitlab
    
     
 
