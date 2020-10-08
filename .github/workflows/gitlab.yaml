@@ -31,7 +31,7 @@ jobs:
     - name: copy some list files 复制文件
       run: |
         echo "https://wudongdefeng:${{ secrets.gitlab }}@gitlab.com">~/.git-credentials
-        cp ./rss.io/docs/index.html ~/gitlab//index.html
+        cp ./rss.io/docs/index.html ~/gitlab/docs/index.html
     - name: Commit files 提交文件
       run: |
         cd ~/gitlab
