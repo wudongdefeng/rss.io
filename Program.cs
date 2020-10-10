@@ -30,6 +30,7 @@ namespace news.jss.sh
         private string[] _feeds = new[]
         {
             "https://fuliba2020.net/feed",
+		"https://www.yddx.net/feed",
 		"https://hao.su/feed",
 		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
 		"https://rsshub.ioiox.com/zaker/source/660",
