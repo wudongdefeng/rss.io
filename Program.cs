@@ -36,7 +36,7 @@ namespace news.jss.sh
 		"https://rsshub.ioiox.com/zaker/source/660",
 		"https://rsshub.ioiox.com/zhihu/daily",
 		"https://rsshub.ioiox.com/zhihu/daily",
-	        "https://link.rss.wiki/wechat/ershicimi/Vj5aZwjn",
+	        "https://rsshub.ioiox.com/wechat/ershicimi/Vj5aZwjn",
          	"https://www.zhihu.com/rss",
 		"https://rsshub.ioiox.com/netease/news/special/1",
 		"https://rsshub.ioiox.com/banyuetan/jicengzhili",
