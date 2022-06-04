@@ -30,16 +30,15 @@ namespace news.jss.sh
         private string[] _feeds = new[]
         {
             "https://fuliba2020.net/feed",
-		"https://www.yddx.net/feed",
-		"https://hao.su/feed",
-		"https://rss.lilydjwg.me/zhihuzhuanlan/c_1085975047386050560",
-		"https://rsshub.ioiox.com/zaker/source/660",
-		"https://rsshub.ioiox.com/zhihu/daily",
-	        "https://rsshub.ioiox.com/wechat/ershicimi/Vj5aZwjn",
-         	"https://www.zhihu.com/rss",
-		"https://rsshub.ioiox.com/netease/news/special/1",
-		"https://rsshub.ioiox.com/banyuetan/jicengzhili",
-		"https://rsshub.ioiox.com/zaobao/realtime/china"
+            "https://www.yddx.net/feed",
+            "https://hao.su/feed",
+            "https://rsshub.app/zhihuzhuanlan/c_1085975047386050560",
+            "https://rsshub.app/zaker/source/660",
+            "https://rsshub.app/zhihu/daily"
+            "https://www.zhihu.com/rss",
+	    "https://rsshub.app/netease/news/special/1",
+	    "https://rsshub.app/banyuetan/jicengzhili",
+	    "https://rsshub.app/zaobao/realtime/china"
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
