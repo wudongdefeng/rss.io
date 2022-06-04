@@ -38,7 +38,7 @@ namespace news.jss.sh
             "https://www.zhihu.com/rss",
 	    "https://rsshub.app/netease/news/special/1",
 	    "https://rsshub.app/banyuetan/jicengzhili",
-	    "https://rsshub.app/zaobao/realtime/china"
+	    "https://rsshub.app/zaobao/realtime/china",
         };
 
         private Dictionary<string, string> _hostOverrides = new Dictionary<string, string>() {
