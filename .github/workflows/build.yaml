@@ -15,7 +15,11 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-
+      
+    - name: time GMT+8 北京时间
+      run: |
+        sudo timedatectl set-timezone 'Asia/Shanghai'  
+        
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.100'
