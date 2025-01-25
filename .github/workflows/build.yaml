@@ -19,11 +19,14 @@ jobs:
     - name: time GMT+8 北京时间
       run: |
         sudo timedatectl set-timezone 'Asia/Shanghai'  
-        
-    - name: Install .NET
-      uses: actions/setup-dotnet@v4
+   
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '3.1.x'    
+  
+    - name: Install dependencies
+      run: dotnet restore
 
     - name: Build website
       run: dotnet run
