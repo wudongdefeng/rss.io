@@ -20,6 +20,9 @@ jobs:
       run: |
         sudo timedatectl set-timezone 'Asia/Shanghai'  
    
+    - name: Install ICU package
+      run: sudo apt-get install -y libicu-dev
+
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v2
       with:
