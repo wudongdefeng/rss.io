@@ -23,10 +23,7 @@ jobs:
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '3.1.x'    
-  
-    - name: Install dependencies
-      run: dotnet restore
+        dotnet-version: '3.1.x'   
 
     - name: Build website
       run: dotnet run
