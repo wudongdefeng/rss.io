@@ -26,7 +26,10 @@ jobs:
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '3.1.x'   
+        dotnet-version: '3.1.x'  
+        
+    - name: Set Invariant Globalization Mode
+      run: echo 'DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true' >> $GITHUB_ENV
 
     - name: Build website
       run: dotnet run
